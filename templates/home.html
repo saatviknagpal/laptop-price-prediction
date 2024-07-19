@@ -1,113 +1,59 @@
 <html>
 
+<head>
+    <title>Laptop Price Prediction</title>
+</head>
+
 <body>
     <div class="login">
-        <h1>Student Exam Performance Indicator</h1>
-
+        <h1>Laptop Price Prediction</h1>
         <form action="{{ url_for('predict_datapoint')}}" method="post">
             <h1>
-                <legend>Student Exam Performance Prediction</legend>
+                <legend>Laptop Price Prediction</legend>
             </h1>
             <div class="mb-3">
-                <label class="form-label">Gender</label>
-                <select class="form-control" name="gender" placeholder="Enter your Gender" required>
-                    <option class="placeholder" selected disabled value="">Select your Gender</option>
-                    <option value="male">
-                        Male
-                    </option>
-                    <option value="female">
-                        Female
-                    </option>
+                <label class="form-label">Brand</label>
+                <select class="form-control" name="Brand" placeholder="Enter your Brand" required>
+                    <option class="placeholder" selected disabled value="">Select your Brand</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Acer">Acer</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="Dell">Dell</option>
+                    <option value="HP">HP</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">Race or Ethnicity</label>
-                <select class="form-control" name="ethnicity" placeholder="Enter your Ethnicity" required>
-                    <option class="placeholder" selected disabled value="">Select Ethnicity</option>
-                    <option value="group A">
-                        Group A
-                    </option>
-                    <option value="group B">
-                        Group B
-                    </option>
-                    <option value="group C">
-                        Group C
-                    </option>
-                    <option value="group D">
-                        Group D
-                    </option>
-                    <option value="group E">
-                        Group E
-                    </option>
-                </select>
+                <label class="form-label">Processor Speed (GHz)</label>
+                <input class="form-control" type="number" name="Processor_Speed" placeholder="Enter Processor Speed"
+                    step="0.01" min="0" required />
             </div>
             <div class="mb-3">
-                <label class="form-label">Parental Level of Education</label>
-                <select class="form-control" name="parental_level_of_education"
-                    placeholder="Enter your Parent's Education Level" required>
-                    <option class="placeholder" selected disabled value="">Select Parent's Education Level</option>
-                    <option value="associate's degree">
-                        Associate's Degree
-                    </option>
-                    <option value="bachelor's degree">
-                        Bachelor's Degree
-                    </option>
-                    <option value="high school">
-                        High School
-                    </option>
-                    <option value="master's degree">
-                        Master's Degree
-                    </option>
-                    <option value="some college">
-                        Some College
-                    </option>
-                    <option value="some high school">
-                        Some High School
-                    </option>
-                </select>
+                <label class="form-label">RAM Size (GB)</label>
+                <input class="form-control" type="number" name="RAM_Size" placeholder="Enter RAM Size" min="1"
+                    required />
             </div>
             <div class="mb-3">
-                <label class="form-label">Lunch Type</label>
-                <select class="form-control" name="lunch" placeholder="Enter your Lunch Type" required>
-                    <option class="placeholder" selected disabled value="">Select Lunch Type</option>
-                    <option value="free/reduced">
-                        Free/Reduced
-                    </option>
-                    <option value="standard">
-                        Standard
-                    </option>
-                </select>
+                <label class="form-label">Storage Capacity (GB)</label>
+                <input class="form-control" type="number" name="Storage_Capacity" placeholder="Enter Storage Capacity"
+                    min="1" required />
             </div>
             <div class="mb-3">
-                <label class="form-label">Test Preparation Course</label>
-                <select class="form-control" name="test_preparation_course" placeholder="Enter your Course" required>
-                    <option class="placeholder" selected disabled value="">Select Test Preparation Course</option>
-                    <option value="none">
-                        None
-                    </option>
-                    <option value="completed">
-                        Completed
-                    </option>
-                </select>
+                <label class="form-label">Screen Size (inches)</label>
+                <input class="form-control" type="number" name="Screen_Size" placeholder="Enter Screen Size" step="0.1"
+                    min="1" required />
             </div>
             <div class="mb-3">
-                <label class="form-label">Writing Score out of 100</label>
-                <input class="form-control" type="number" name="writing_score" placeholder="Enter your Writing Score"
-                    min='0' max='100' />
+                <label class="form-label">Weight (kg)</label>
+                <input class="form-control" type="number" name="Weight" placeholder="Enter Weight" step="0.1" min="0"
+                    required />
             </div>
             <div class="mb-3">
-                <label class="form-label">Reading Score out of 100</label>
-                <input class="form-control" type="number" name="reading_score" placeholder="Enter your Reading Score"
-                    min='0' max='100' />
-            </div>
-            <div class="mb-3">
-                <input class="btn btn-primary" type="submit" value="Predict your Math Score" required />
+                <input class="btn btn-primary" type="submit" value="Predict Laptop Price" />
             </div>
         </form>
         <h2>
             The prediction is {{results}}
         </h2>
-
     </div>
 </body>
 
